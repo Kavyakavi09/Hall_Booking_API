@@ -49,17 +49,13 @@ let bookingDetails = [
 // home page
 
 app.get('/', (req, res) => {
-  res.status(200).send(`
-        Welcome to hall booking app 😊
-
-        To create a room - /room/create,
-
-        To book a room -/room/book,
-
-        To get the details of booked rooms - /room/booked-details,
-        
-        To get the details of booked customer - /room/customer-details
-`);
+  res.status(200).json({
+    message: 'Welcome to hall booking app 😊',
+    To_create_a_room: '/room/create',
+    To_book_a_room: '/room/book',
+    To_get_the_details_of_booked_rooms: ' /room/booked-details',
+    To_get_the_details_of_booked_customer: '/room/customer-details',
+  });
 });
 // creating a room
 
