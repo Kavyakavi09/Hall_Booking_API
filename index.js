@@ -98,11 +98,7 @@ app.post('/room/book', (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res
-      .status(400)
-      .send(
-        `This room is not assigned with this room number ${req.body.booked_room_id}`
-      );
+    res.status(400).send('internal error');
   }
 });
 
@@ -123,7 +119,7 @@ app.get('/room/booked-details', (req, res) => {
     roomArray.push(roomObj);
   });
 
-  res.json(roomArray);
+  res.status(200).send(roomArray);
 });
 
 // List all customers with booked data
