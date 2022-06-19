@@ -4,7 +4,9 @@ const app = express();
 
 app.use(express.json());
 
-let port = 3002;
+require('dotenv').config();
+
+let port = process.env.PORT;
 
 let rooms = [
   {
