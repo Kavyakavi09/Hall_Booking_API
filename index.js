@@ -43,6 +43,18 @@ let bookingDetails = [
     status: 'booked',
   },
 ];
+
+// home page
+
+app.get('/', (req, res) => {
+  res.status(200).send(`
+        Welcome to hall booking app 😊,
+        To create a room - /room/create,
+        To book a room -/room/book,
+        To get the details of booked rooms - /room/booked-details,
+        To get the details of booked customer - /room/customer-details
+`);
+});
 // creating a room
 
 app.post('/room/create', (req, res) => {
